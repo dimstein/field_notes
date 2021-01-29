@@ -1,22 +1,24 @@
-import 'package:field_notes/base_camp/login_page.dart';
+import 'package:field_notes/base_camp/landing_page.dart';
 import 'package:flutter/material.dart';
+import 'package:load_toast/load_toast.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(LoadToast(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+  final String appTitle = 'Field Notes';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: appTitle,
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: LandingPage(appTitle: appTitle),
     );
   }
 }

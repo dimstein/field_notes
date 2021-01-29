@@ -30,17 +30,27 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         child: Column(
           children: [
+            Spacer(),
+            CircleAvatar(
+              radius: 42,
+              backgroundColor: Color(0xffffd700),
+              child: CircleAvatar(
+                radius: 35,
+                backgroundImage: AssetImage('images/duck.png'),
+
+              ),
+            ),
             TextFormField(
-              controller: emailTEC,
+              //controller: emailTEC,
               decoration: InputDecoration(
                 icon: Icon(Icons.person),
                 hintText: 'Login Email',
                 labelText: 'email'
               ),
               onSaved: (String value){},
-              validator: (String value){
-                return value.contains('@') ? 'Not a email address' : null;
-              },
+              // validator: (String value){
+              //   return value.contains('@') ? 'Not a email address' : null;
+              // },
 
             ),
             TextFormField(
@@ -55,6 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: (){},
                 icon: Icon(Icons.login_rounded),
                 label: Text('Login')),
+            Spacer(),
 
           ],
         )
